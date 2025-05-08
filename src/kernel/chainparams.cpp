@@ -81,9 +81,9 @@ static CBlock CreateGenesisBlock(const CScript& genesisInputScript, const CScrip
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "... choose what comes next.  Lives of your own, or a return to chains. -- V";
-    const CScript genesisInputScript = CScript() << 0x1c007fff << CScriptNum(522) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-    const CScript genesisOutputScript = CScript() << ParseHex("04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5") << OP_CHECKSIG;
+    const char* pszTimestamp = "US and Germany foiled Russian plot to assassinate CEO of arms manufacturer";
+    const CScript genesisInputScript = CScript() << 486604799 << CScriptNum(4) << std::vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
+    const CScript genesisOutputScript = CScript() << ParseHex("04423ef45ccb4dc584e8b617789ee4cf108ae18b1cae979eb7cd7f3c69b538e3f888e8efd8dab0b0777baff8871f96b116b47576b731bdeaad005ee7492ceb592c") << OP_CHECKSIG;
     return CreateGenesisBlock(genesisInputScript, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -121,8 +121,8 @@ public:
         consensus.SegwitHeight = 475000;
         consensus.MinBIP9WarningHeight = 477016; // segwit activation height + miner confirmation window
         consensus.powLimit = uint256{"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"};
-        consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-        consensus.nPowTargetSpacing = 10 * 60;
+        consensus.nPowTargetTimespan = 1.5 * 60 * 60;
+        consensus.nPowTargetSpacing = 5 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
         consensus.enforce_BIP94 = false;
         consensus.fPowNoRetargeting = false;
@@ -167,26 +167,25 @@ public:
         m_assumed_blockchain_size = 8;
         m_assumed_chain_state_size = 1;
 
-        genesis = CreateGenesisBlock(1303000001, 0xa21ea192u, 0x1c007fff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1720806555, 1255631, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256{"000000000062b72c5e2ceb45fbc8587e807c155b0da735e6483dfba2f0a9c770"});
-        assert(genesis.hashMerkleRoot == uint256{"41c62dbd9068c89a449525e3cd5ac61b20ece28c3c38b3f35b2161f0e6d3cb0d"});
+        assert(consensus.hashGenesisBlock == uint256{"0x00000ea8e97e04892a03df35947ff0c4df705723f5b18be7cc6456ed16e9788e"});
+        assert(genesis.hashMerkleRoot == uint256{"0xf7224a6085bc48821bd7c7c1fa0f0e4aa1f7217da863af69f8c1c102e1184b39"});
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("btcs.seed.quisquis.de."); // Peter Conrad
-        vSeeds.emplace_back("seed.btcs.markasoftware.com."); // Mark Polyakov
-        vSeeds.emplace_back("dnsseed1.btcs.dotbit.zone."); // Stefan Stere
-        vSeeds.emplace_back("dnsseed2.btcs.dotbit.zone."); // Stefan Stere
-        vSeeds.emplace_back("dnsseed.btcs.testls.space."); // mjgill89
-        vSeeds.emplace_back("bitcoinsilver.seed.cypherstack.com."); // Dan Miller
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,52);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,13);
-        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,180);
+        vSeeds.emplace_back("213.165.83.94"); // Olafs node
+        vSeeds.emplace_back("78.138.45.19"); // Elvas node 1
+        vSeeds.emplace_back("109.205.181.171"); // Elvas node 2
+        // also update chainparamsseeds.h
+
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0x1A);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,0x05);
+        base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,0x80);
         /* FIXME: Update these below.  */
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
         base58Prefixes[EXT_SECRET_KEY] = {0x04, 0x88, 0xAD, 0xE4};
