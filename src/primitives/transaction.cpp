@@ -81,7 +81,7 @@ bool CTransaction::ComputeHasWitness() const
 
 void CMutableTransaction::SetBitcoinsilver()
 {
-    version = CTransaction::NAMECOIN_VERSION;
+    version = CTransaction::BITCOINSILVER_VERSION;
 }
 
 Txid CTransaction::ComputeHash() const

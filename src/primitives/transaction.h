@@ -300,7 +300,7 @@ public:
     // FIXME: Upstream Bitcoin has default version set to 2 already.  Do this
     // once we forked to make the tx version irrelevant for Bitcoinsilver.
     static const int32_t CURRENT_VERSION{1};
-    static const int32_t NAMECOIN_VERSION{0x7100};
+    static const int32_t BITCOINSILVER_VERSION{0x7100};
 
     // The local variables are made const to prevent unintended modification
     // without updating the cached hash value. However, CTransaction is not
@@ -364,7 +364,7 @@ public:
 
     bool IsBitcoinsilver() const
     {
-        return version == NAMECOIN_VERSION;
+        return version == BITCOINSILVER_VERSION;
     }
 
     friend bool operator==(const CTransaction& a, const CTransaction& b)

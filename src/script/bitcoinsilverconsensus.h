@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SCRIPT_NAMECOINCONSENSUS_H
-#define BITCOIN_SCRIPT_NAMECOINCONSENSUS_H
+#ifndef BITCOIN_SCRIPT_BITCOINSILVERCONSENSUS_H
+#define BITCOIN_SCRIPT_BITCOINSILVERCONSENSUS_H
 
 #include <stdint.h>
 
@@ -31,7 +31,7 @@
 extern "C" {
 #endif
 
-#define NAMECOINCONSENSUS_API_VER 2
+#define BITCOINSILVERCONSENSUS_API_VER 2
 
 typedef enum bitcoinsilverconsensus_error_t
 {
@@ -93,4 +93,4 @@ EXPORT_SYMBOL unsigned int bitcoinsilverconsensus_version();
 
 #undef EXPORT_SYMBOL
 
-#endif // BITCOIN_SCRIPT_NAMECOINCONSENSUS_H
+#endif // BITCOIN_SCRIPT_BITCOINSILVERCONSENSUS_H
