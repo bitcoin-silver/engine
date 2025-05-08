@@ -179,7 +179,7 @@ class NameRegistrationTest (NameTestFramework):
     self.checkNameHistory (0, "name-1", ["x" * 520, "reregistered"])
 
     # Test that name updates are even possible with less balance in the wallet
-    # than what is locked in a name (0.01 NMC).  There was a bug preventing
+    # than what is locked in a name (0.01 BTCS).  There was a bug preventing
     # this from working.
     balance = node.getbalance ()
     keep = Decimal ("0.001")

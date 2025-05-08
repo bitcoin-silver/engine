@@ -5209,7 +5209,7 @@
         "wy" : "252f196c87ed3d2a59d3b1b559137fed0013fecefc19fb5a92682b9bca51b950"
       },
       "publicKeyDer" : "3056301006072a8648ce3d020106052b8104000a03420004babb3677b0955802d8e929a41355640eaf1ea1353f8a771331c4946e3480afa7252f196c87ed3d2a59d3b1b559137fed0013fecefc19fb5a92682b9bca51b950",
-      "publicKeyPem" : "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEurs2d7CVWALY6SmkE1VkDq8eoTU/incT\nMcSUbjSAr6clLxlsh+09KlnTsbVZE3/tABP+zvwZ+1qSaCubylG5UA==\n-----END PUBLIC KEY-----\n",
+      "publicKeyPem" : "-----BEGIN PUBLIC KEY-----\nMFYwEAYHKoZIzj0CAQYFK4EEAAoDQgAEurs2d7CVWALY6SmkE1VkDq8eoTU/incT\BTCSSUbjSAr6clLxlsh+09KlnTsbVZE3/tABP+zvwZ+1qSaCubylG5UA==\n-----END PUBLIC KEY-----\n",
       "sha" : "SHA-256",
       "tests" : [
         {
