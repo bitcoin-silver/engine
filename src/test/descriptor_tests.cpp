@@ -746,7 +746,7 @@ BOOST_AUTO_TEST_CASE(descriptor_test)
             RANGE,
             {
                 {{"a914689cdf7de5836ec04fb971d128cc84858f73e11487"},{"a9142ea7dbaf0a77ee19f080cdacb3e13560e3cd9cf587"},{"a9143da854021f58f5e2d3ff6bb4fcd0ced877deb34987"}},
-                {{"a9143dd613d162e89b83369bbf08e5f1977cfdc9b02787"},{"a91449eef5d3df5c465b20a630c66058fe689082d8e187"},{"a91492be56babf54ea2109c577f799ba6d73948e8c3287"}},
+                {{"a9143dd613d162e89b105679bbf08e5f1977cfdc9b02787"},{"a91449eef5d3df5c465b20a630c66058fe689082d8e187"},{"a91492be56babf54ea2109c577f799ba6d73948e8c3287"}},
                 {{"a9140093ca92097bdf557fbb0570bb77e1efd2e7529c87"},{"a914e4d0419d3d2ce8f921a800796811ff5462bb151887"},{"a914997bf69841ac444190dc02f5e6031dd6f8feab4587"}},
             },
             OutputType::LEGACY,

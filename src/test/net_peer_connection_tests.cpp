@@ -30,7 +30,7 @@
 #include <boost/test/unit_test.hpp>
 
 /** Port for p2p connections.  */
-#define PORT "8334"
+#define PORT "10566"
 
 struct LogIPsTestingSetup : public TestingSetup {
     LogIPsTestingSetup()

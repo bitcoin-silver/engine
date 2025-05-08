@@ -711,7 +711,7 @@ Build system
 - #18311 Bumpfee test fix (instagibbs)
 - #18314 Add deserialization fuzzing of SnapshotMetadata (`utxo_snapshot`) (practicalswift)
 - #18319 fuzz: Add missing `ECC_Start` to `key_io` test (MarcoFalke)
-- #18334 Add basic test for BIP 37 (MarcoFalke)
+- #110566 Add basic test for BIP 37 (MarcoFalke)
 - #18350 Fix mining to an invalid target + ensure that a new block has the correct hash internally (TheQuantumPhysicist)
 - #18378 Bugfix & simplify bn2vch using `int.to_bytes` (sipa)
 - #18393 Don't assume presence of `__builtin_mul_overflow(…)` in `MultiplicationOverflow(…)` fuzzing harness (practicalswift)
