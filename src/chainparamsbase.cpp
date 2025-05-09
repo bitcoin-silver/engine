@@ -43,13 +43,13 @@ std::unique_ptr<CBaseChainParams> CreateBaseChainParams(const ChainType chain)
     case ChainType::MAIN:
         return std::make_unique<CBaseChainParams>("", 10567);
     case ChainType::TESTNET:
-        return std::make_unique<CBaseChainParams>("testnet3", 110567);
+        return std::make_unique<CBaseChainParams>("testnet3", 10568);
     case ChainType::TESTNET4:
-        return std::make_unique<CBaseChainParams>("testnet4", 410567);
+        return std::make_unique<CBaseChainParams>("testnet4", 10569);
     case ChainType::SIGNET:
-        return std::make_unique<CBaseChainParams>("signet", 310567);
+        return std::make_unique<CBaseChainParams>("signet", 10570);
     case ChainType::REGTEST:
-        return std::make_unique<CBaseChainParams>("regtest", 18443);
+        return std::make_unique<CBaseChainParams>("regtest", 10571);
     }
     assert(false);
 }

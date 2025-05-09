@@ -33,8 +33,6 @@ Bitcoin Silver aims to enhance the original Bitcoin network by:
 <tr><td>Algo</td><td>SHA256</td></tr>
 </table>
 
-The initial allocation of 470,000 Bitcoin Silver (ISF) was distributed among core members, averaging 50,000 per person, and backed by USDT deposits used for listing fees and initial cloud services. This was not a pre-mine for personal profit but rather an investment in foundational contributors to incentivize development, ensure long-term commitment, and support the project's growth.
-
 ## Getting Started
 
 ### Prerequisites
@@ -47,25 +45,13 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Clone the Repository**
 ```bash
-   git clone https://github.com/mrvistos/bitcoinsilver.git
-   cd bitcoinsilver
+   git clone https://github.com/mrvistos/engine.git
+   cd engine
 ```
 
 2. **Build the Source Code**
 ```bash
-   make clean
-   make distclean
-   ./autogen.sh
-   # for linux:
-   ./configure --disable-tests --disable-bench # possible arguments: --with-gui=qt5 --disable-wallet --without-gui
-   make
-   # for windows:
-   make clean
-   cd depends
-   make HOST=x86_64-w64-mingw32
-   cd ..
-   ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32 --with-gui=qt5 --disable-tests --disable-bench
-   make
+   // tbd
 ```
 
    3. **Run the Node**
