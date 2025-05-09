@@ -51,12 +51,14 @@ Before you begin, ensure you have met the following requirements:
 
 2. **Build the Source Code**
 ```bash
-   // tbd
+   cmake -B build
+   cmake --build build    # use "-j N" for N parallel jobs
+   cmake --install build  # optional
 ```
 
    3. **Run the Node**
 ```bash
-   ./bitcoinsilverd
+   ./build/bin/bitcoinsilverd
 ```
 ## Usage
 
