@@ -179,8 +179,6 @@ public:
         // release ASAP to avoid it where possible.
 
         vSeeds.emplace_back("213.165.83.94"); // Olafs node
-        vSeeds.emplace_back("78.138.45.19"); // Elvas node 1
-        vSeeds.emplace_back("109.205.181.171"); // Elvas node 2
         // also update chainparamsseeds.h
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0x1A);
