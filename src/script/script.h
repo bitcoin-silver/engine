@@ -623,26 +623,23 @@ bool CheckMinimalPush(const std::vector<unsigned char>& data, opcodetype opcode)
 
 /** Build a script by concatenating other scripts, or any argument accepted by CScript::operator<<. */
 template<typename... Ts>
-CScript BuildScript(Ts&&... inputs)
-{
+CScript BuildScript(Ts&&... inputs) {
     CScript ret;
-    int cnt{0};
-
-    ([&ret, &cnt] (Ts&& input) {
-        if constexpr (std::is_same_v<std::remove_cv_t<std::remove_reference_t<Ts>>, CScript>) {
+    int cnt = 0;
+    (..., [&ret, &cnt](auto&& input) {
+        if constexpr (std::is_same_v<std::remove_cv_t<std::remove_reference_t<decltype(input)>>, CScript>) {
             // If it is a CScript, extend ret with it. Move or copy the first element instead.
             if (cnt == 0) {
-                ret = std::forward<Ts>(input);
+                ret = std::forward<decltype(input)>(input);
             } else {
                 ret.insert(ret.end(), input.begin(), input.end());
             }
         } else {
-            // Otherwise invoke CScript::operator<<.
-            ret << input;
+        	// Otherwise invoke CScript::operator<<.
+            ret << std::forward<decltype(input)>(input);
         }
         cnt++;
-    } (std::forward<Ts>(inputs)), ...);
-
+    }(std::forward<Ts>(inputs)));
     return ret;
 }
 
