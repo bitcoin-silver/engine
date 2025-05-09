@@ -169,8 +169,8 @@ public:
 
         genesis = CreateGenesisBlock(1720806555, 1255631, 0x1e0ffff0, 1, 0 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256{"0x00000ea8e97e04892a03df35947ff0c4df705723f5b18be7cc6456ed16e9788e"});
-        assert(genesis.hashMerkleRoot == uint256{"0xf7224a6085bc48821bd7c7c1fa0f0e4aa1f7217da863af69f8c1c102e1184b39"});
+        assert(consensus.hashGenesisBlock == uint256{"00000ea8e97e04892a03df35947ff0c4df705723f5b18be7cc6456ed16e9788e"});
+        assert(genesis.hashMerkleRoot == uint256{"f7224a6085bc48821bd7c7c1fa0f0e4aa1f7217da863af69f8c1c102e1184b39"});
 
         // Note that of those which support the service bits prefix, most only support a subset of
         // possible options.
