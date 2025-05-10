@@ -171,7 +171,7 @@ SendNameOutput (const JSONRPCRequest& request,
         if (nAmount <= 0)
           throw JSONRPCError (RPC_TYPE_ERROR, "Invalid amount for send");
 
-        vecSend.push_back ({coinDest, nAmount, false});
+        vecSend.push_back({coinDest, nAmount, false, /* nameScript */ {}});
       }
 
   CCoinControl coinControl;
@@ -1083,7 +1083,7 @@ sendtoname ()
   std::vector<CRecipient> recipients;
   const CNoDestination dest(data.getAddress ());
   const CAmount amount = AmountFromValue (request.params[1]);
-  recipients.push_back ({dest, amount, fSubtractFeeFromAmount});
+  recipients.push_back ({dest, amount, fSubtractFeeFromAmount, /* nameScript */ {}});
 
   return SendMoney(*pwallet, coin_control, nullptr, recipients, mapValue, false);
 }
